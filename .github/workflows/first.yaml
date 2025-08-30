@@ -2,7 +2,7 @@ name : first.yaml
 on : [push]
 jobs:
   run-shell-commands:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: echo a string
         run: echo "hello world"
@@ -10,4 +10,3 @@ jobs:
         run: |
          node -v
          npm  -v
-         
