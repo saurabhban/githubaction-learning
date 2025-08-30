@@ -1,26 +1,28 @@
-name : first.yaml
-on : [push]
+name: first.yaml
+
+on: [push]
+
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
         run: echo "hello world"
+
       - name: run multiple commands
         run: |
-         node -v
-         npm  -v
+          node -v
+          npm -v
+
   parallel-shell-commands:
     runs-on: macos-latest
     steps:
       - name: run macos commands
         run: sw_vers
+
   windows-commands:
     runs-on: windows-latest
-    depends-on: parallel-shell-commands
+    needs: parallel-shell-commands
     steps:
       - name: windows commands
         run: dir
-
-
-        
