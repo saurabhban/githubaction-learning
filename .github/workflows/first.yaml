@@ -15,4 +15,12 @@ jobs:
     steps:
       - name: run macos commands
         run: sw_vers
+  windows-commands:
+    runs-on: windows-latest
+    depends-on: parallel-shell-commands
+    steps:
+      - name: windows commands
+        run: dir
+
+
         
